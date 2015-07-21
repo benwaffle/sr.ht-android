@@ -29,13 +29,6 @@
 
                 <data android:mimeType="*/*" />
             </intent-filter>
-            <!-- are there going to be srht:// links?
-            <intent-filter>
-                <data android:scheme="srht" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-            </intent-filter>
-            -->
         </activity>
     </application>
 

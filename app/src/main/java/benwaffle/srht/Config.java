@@ -2,12 +2,8 @@ package benwaffle.srht;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.preference.*;
+import android.view.*;
 
 public class Config extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
     public static String getApiKey(Context ctx) {

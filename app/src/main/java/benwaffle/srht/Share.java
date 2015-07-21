@@ -3,33 +3,21 @@ package benwaffle.srht;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Looper;
 import android.provider.MediaStore;
-import android.util.JsonReader;
 import android.util.Log;
-import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import com.squareup.okhttp.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class Share extends Activity {
     private static final String LOG_TAG = Share.class.getSimpleName();
@@ -70,9 +58,13 @@ public class Share extends Activity {
         int index = cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA);
         cursor.moveToFirst();
         if (index >= 0) {
-            return cursor.getString(index);
-        } else
+            String result = cursor.getString(index);
+            cursor.close();
+            return result;
+        } else {
+            cursor.close();
             return "";
+        }
     }
 
     private void upload(String filepath) {
