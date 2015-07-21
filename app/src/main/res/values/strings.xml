@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SrHtApp</string>
+
+    <string name="url_pref_title">URL</string>
+    <string name="url_pref_key">url</string>
+    <string name="url_pref_default">sr.ht</string>
+
+    <string name="apikey_pref_title">API Key</string>
+    <string name="apikey_pref_key">apikey</string>
+    <string name="apikey_pref_default"/>
+
+    <string name="settings_activity_title">Settings</string>
+</resources>
